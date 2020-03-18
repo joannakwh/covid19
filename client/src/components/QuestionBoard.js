@@ -108,32 +108,28 @@ export default class QuestionBoard extends Component {
 
                 </a> */}
                       <div>
-
-                        <Button as='div' labelPosition='right'>
-                          <Button color='red' onClick={() => this.props.handleClickLike(question.id, i)}>
-                            <Icon name='heart' />
-                        Like
-                          </Button>
-                          <Label as='a' basic color='red' pointing='left'>
-                            {question.like || 0}
-                          </Label>
+                        <Button className='qPanelBottomButton' basic title='like' onClick={() => this.props.handleClickLike(question.id, i)}>
+                          <Icon name='heart' /> {question.like || 0}
                         </Button>
-                        <Button animated='vertical' color='twitter'>
+
+                        <Button className='qPanelBottomButton' basic title='tweet'>
                           <a
-                            style={{ color: 'white' }}
+                            style={{ color: 'inherit' }}
                             href={`https://twitter.com/intent/tweet?text=${question.title}%20Answer:%20${question.answers &&question.answers.length > 0 && question.answers[0].split(' ').slice(0, 10).join(' ')}...%20at%20${config.domainURL + '?qid=' + question.id}%20@thenthopinion`}
                             target='_blank'
                           >
 
                             <Button.Content visible>
 
-                              <Icon name='twitter' /> Tweet
+                              <Icon name='twitter' />
 
                             </Button.Content>
 
                           </a>
                         </Button>
-                        <Button icon='flag' color='red' basic title='report an issue' onClick={() => this.handleReportIssue(question)} />
+                        <Button className='qPanelBottomButton' basic title='report an issue' onClick={() => this.handleReportIssue(question)}>
+                          <Icon name='flag' />
+                        </Button>
 
                       </div>
 

@@ -62,6 +62,15 @@ body{
   align-items: center;
   padding-top: 10px;
 }
+
+.ui.basic.button.qPanelBottomButton {
+  box-shadow: none !important;
+  color: black !important; 
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
 .buttonGroupCustom {
   display: flex;
   justify-content: center;
